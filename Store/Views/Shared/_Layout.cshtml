@@ -1,4 +1,6 @@
 ﻿
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-    <title>Wolmart eCommmerce Marketplace HTML Template</title>
+    <title>@ViewBag.Title</title>
 
     <meta name="keywords" content="HTML5 Template">
     <meta name="description" content="Wolmart eCommmerce Marketplace HTML Template">
@@ -34,17 +36,44 @@
 <body class="about-us">
     <div class="page-wrapper">
         <!-- Start of Header -->
+
+
         @Html.Partial("header")
+
         <!-- End of Header -->
-        <main class="main">
-            @RenderBody()
-        </main>
+        <!-- Start of Page Header -->
+        @if (ViewBag.pageHeader != null)
+        {
+            <div class="page-header">
+                <div class="container">
+                    <h1 class="page-title mb-0">@ViewBag.PageHeader</h1>
+                </div>
+            </div>
+        }
 
-        <!-- Start of Footer -->
-        @Html.Partial("footer")
-        <!-- End of Footer -->
+            <!-- End of Page Header -->
 
-    </div>
+    <main class="main">
+
+        <!-- Start of Breadcrumb -->
+        @RenderSection("Breadcrumb", required: false)
+        
+        <!-- End of Breadcrumb -->
+        <!-- Start of Pgae Contetn -->
+        <div class="page-content mb-8">
+            <div class="container">
+
+                @RenderBody()
+            </div>
+        </div>
+        <!-- End of Page Content -->
+    </main>
+
+            <!-- Start of Footer -->
+            @Html.Partial("footer")
+            <!-- End of Footer -->
+
+        </div>
     <!-- Start of Sticky Footer -->
     <div class="sticky-footer sticky-content fix-bottom">
         <a href="demo1.html" class="sticky-link active">

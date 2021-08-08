@@ -168,11 +168,26 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\BrandsController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\CatalogController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
+    <Compile Include="Controllers\CompareController.cs" />
+    <Compile Include="Controllers\ElementController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\VendorsController.cs" />
+    <Compile Include="Entities\Base\EntityBase.cs" />
+    <Compile Include="Entities\Blog.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108080942002_CreatBlogTable.cs" />
+    <Compile Include="Migrations\202108080942002_CreatBlogTable.Designer.cs">
+      <DependentUpon>202108080942002_CreatBlogTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -180,6 +195,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-Store-20210731101444.mdf" />
+    <Content Include="App_Data\aspnet-Store-20210731101444_log.ldf">
+      <DependentUpon>aspnet-Store-20210731101444.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\assets\ajax\login.html" />
     <Content Include="Content\assets\css\demo1.min.css" />
     <Content Include="Content\assets\css\demo10.min.css" />
@@ -1353,6 +1372,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\svg\image2.svg" />
+    <Content Include="Content\svg\img.svg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -1444,9 +1465,20 @@
     <Content Include="Views\Shared\footer.cshtml" />
     <Content Include="Views\Shared\script.cshtml" />
     <Content Include="Views\Shared\css.cshtml" />
+    <Content Include="Views\Vendors\List.cshtml" />
+    <Content Include="Views\Vendors\Show.cshtml" />
+    <Content Include="Views\Blog\List.cshtml" />
+    <Content Include="Views\Blog\Show.cshtml" />
+    <Content Include="Views\Compare\Compaire.cshtml" />
+    <Content Include="Views\Element\Element.cshtml" />
+    <Content Include="Views\Element\Instagram.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="Views\Brands\" />
+    <Folder Include="Views\Cart\" />
+    <Folder Include="Views\Catalog\" />
+    <Folder Include="Views\Checkout\" />
+    <Folder Include="Views\Vender\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -1460,6 +1492,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202108080942002_CreatBlogTable.resx">
+      <DependentUpon>202108080942002_CreatBlogTable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
